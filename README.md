@@ -10,14 +10,13 @@
 | last_name          | string  | null: false |
 | first_name         | string  | null: false |
 | last_name_kana     | string  | null: false |
-| first_name_kana    | string  | null:false  |
+| first_name_kana    | string  | null: false |
 | birthday           | date    | null: false |
 
 ### Association
 
 - has_many :items
 - has_many :comments
-- has_one :delivery 
 - has_many :order_histories
 
 ## items テーブル
@@ -30,7 +29,7 @@
 | item_condition_id       | integer    | null: false |
 | shopping_fee_bearer_id  | integer    | null: false |
 | prefecture_id           | integer    | null: false |
-| shopping_days_id        | integer    | null: false |
+| shopping_day_id        | integer    | null: false |
 | item_price              | integer    | null: false | 
 | user                    | references | null: false, foreign_key: true |
 
@@ -50,12 +49,11 @@
 | address       | string     | null: false  |
 | building_name | string     |              |
 | phone_number  | string     | null: false  |
-| user          | references | null: false, foreign_key: true |
+| order_history | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
-- has_many :order_history
+- belongs_to :order_history
 
 ## comments テーブル
 
@@ -83,4 +81,4 @@
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :delivery
+- has_one :delivery
