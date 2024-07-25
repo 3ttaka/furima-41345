@@ -16,8 +16,6 @@ class Item < ApplicationRecord
   belongs_to :shopping_fee_bearer
   belongs_to :prefecture
   belongs_to :shopping_day
-  has_many :comments
   belongs_to :user
-  has_one :order_history
   has_one_attached :image
 end
