@@ -93,6 +93,11 @@ RSpec.describe OrderDelivery, type: :model do
         @order_delivery.valid?
         expect(@order_delivery.errors.full_messages).to include("Token can't be blank")
       end
+      it 'prefecture_idが初期値では保存できない' do
+        @order_delivery.prefecture_id = 1
+        @order_delivery.valid?
+        expect(@order_delivery.errors.full_messages).to include("Prefecture can't be blank")
+      end
     end
   end
 end
