@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: :index
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @item = Item.find(params[:item_id])
+    redirect_to root_path if OrderHistory.exists?(item_id: @item.id)
     @order_delivery = OrderDelivery.new
   end
 

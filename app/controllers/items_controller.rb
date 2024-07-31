@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if OrderHistory.exists?(item_id: @item.id)
     return unless current_user.id != @item.user.id
 
     redirect_to root_path
