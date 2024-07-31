@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-  belongs_to :user
   has_one    :order_history
 
   validates :item_name, presence: true
