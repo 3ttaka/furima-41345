@@ -1,6 +1,6 @@
 lock '3.19.1'
 
-set :application, 'FURIMA'
+set :application, 'furima-41345'
 
 set :repo_url,  'git@github.com:3ttaka/furima-41345.git'
 set :branch, 'main'
